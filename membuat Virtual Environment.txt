@@ -1,0 +1,5 @@
+- masuk ke folder yang akan di isi venv lewat cmd atau terminal
+-ketikan : python -m venv <nama folder buat venv nya>
+- untuk menjalankan , masuk ke dalam folder venv nya dan ketik activate.bat
+- untuk keluar tingagal ketik deactivate
+
