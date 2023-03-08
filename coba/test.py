@@ -21,3 +21,5 @@ for i in range(n):
     jumlah-=1 
     space+=1
     jumlah2+=1
+
+    tes
