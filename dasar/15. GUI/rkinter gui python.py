@@ -9,7 +9,7 @@ from tkinter.messagebox import showinfo # untuk menampilkan pop up window
 # Init
 window = tk.Tk() # membuat tampilan awal atau app/window
 window.configure(bg="white") # bisa untuk mengatur selain warna (untuk warna bisa menggnakan nilai hexadesimal dari suatu warna)
-window.geometry("300x200") # untuk mengatur ukuran
+window.geometry("500x500") # untuk mengatur ukuran
 window.resizable(False,False) # untuk mengatur apakah ukuran windownya bisa di atur atau tidak, false = tidak, true = bisa
              # lebar, tinggi
 window.title("Sapa Dia!") # untuk judul yang di tampilkan di window
