@@ -2,7 +2,6 @@
 import tkinter as tk 
 
 
-
 app = tk.Tk() 
 selected_option = tk.StringVar()
 
@@ -109,10 +108,6 @@ def getentry():
                 hasil_l.config(text=f"Luas = {luas} Cm^2\nKeliling = {kel}")
             except: 
                 hasil_l.config(text="Mohon masukan Bilangan")
-            
-             
-                
-
 
 # ===============Membuat alat=================
 # judul halaman
