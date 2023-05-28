@@ -6,14 +6,24 @@ lebarKotak = 50
 
 app = tk.Tk()
 # app.config(cursor= "")
-kanvas = tk.Canvas(bg="red")
+kanvas = tk.Canvas()
  
 
-kanvas.place(width=200, height=lebarKanvas)
+kanvas.place(width=1000, height=1000)
 
-if lebarKotak > lebarKanvas :
-    alert = messagebox.showwarning(title="warning!!!!!", message="ukuran bangun ruang melebihi ukuran kanvas" )
-else:
-    kotak = kanvas.create_rectangle(10,10,lebarKotak,20, width=2)
+alas = 550
+tinggi = 200
+
+xawal = 10
+yawal = 100
+
+
+
+# alas
+kanvas.create_line(xawal,tinggi,alas,tinggi, width=2)
+# tinggi
+kanvas.create_line(xawal,yawal,xawal,tinggi, width=2)
+# miring
+kanvas.create_line(xawal, yawal, alas, tinggi, width=2)
 
 app.mainloop()

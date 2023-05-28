@@ -22,7 +22,7 @@ yy2 = 710
 kanvas = tk.Canvas(height=1000, width= 1400)
 kanvas.pack()
 
-
+#  ======== fungsi gambar =========
 def xxx ():
     # untuk persegi
     hasilGambarx = float(x.get()) + xx1
@@ -31,6 +31,10 @@ def xxx ():
     # lingkaran
     llx = hasilGambarx * 2
     lly = hasilGambarx2 + hasilGambarx
+    
+    # segitiga
+    hasilt = float(x2.get()) + yy1
+    hasila = float(x.get()) + xx1
     
     match selected_option.get():
         case "opsi 1":
@@ -43,6 +47,16 @@ def xxx ():
                 alert = messagebox.showwarning("peringatan", "ukuran gambar melebihi kanvas, tidak dapat menampilkan gambar")
             else:
                 pp = kanvas.create_rectangle(xx1,yy1,float(x.get())+ xx1, float(x2.get())+ yy1, width= 2) 
+        case "opsi 3":
+            if(hasila > xx2 or hasilt > yy2):
+                alert = messagebox.showwarning("peringatan", "ukuran gambar melebihi kanvas, tidak dapat menampilkan gambar")
+            else:
+                # alas
+                kanvas.create_line(xx1,hasilt,hasila,hasilt, width=2)
+                # tinggi
+                kanvas.create_line(xx1,yy1,xx1,hasilt, width=2)
+                # miring
+                kanvas.create_line(xx1, yy1, hasila, hasilt, width=2)
         case "opsi 4":
             if(lly > yy2):
                 alert = messagebox.showwarning("peringatan", "ukuran gambar melebihi kanvas, tidak dapat menampilkan gambar")
@@ -147,8 +161,8 @@ def getentry():
                 angka1 = float(x.get())
                 angka2 = float(x2.get())
                 luas = 0.5*angka1*angka2
-                sm = 0.5*angka1
-                kel = angka1 + sm**2
+                sm = ((angka1**2) + (angka2**2))/2
+                kel = angka1 + angka2 + sm
                 hasil_l.config(text=f"Luas = {luas} Cm^2\nKeliling = {kel}")
                 kanvas.delete("all")
                 xxx()
@@ -209,3 +223,4 @@ app.mainloop() # untuk menjalankan app
 '''
 untuk command dengn fungsi jangan menggunakan tanda kurung
 '''
+
