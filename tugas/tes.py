@@ -1,48 +1,63 @@
-import tkinter as tk
-from tkinter import messagebox
-import time
-import csv
+import matplotlib.pyplot as plt
+
+class PIDController:
+    def __init__(self, Kp, Ki, Kd):
+        self.Kp = Kp
+        self.Ki = Ki
+        self.Kd = Kd
+        self.last_error = 0
+        self.integral = 0
+
+    def calculate(self, setpoint, feedback):
+        error = setpoint - feedback
+
+        # Proportional term
+        P = self.Kp * error
+
+        # Integral term
+        self.integral += error
+        I = self.Ki * self.integral
+
+        # Derivative term
+        D = self.Kd * (error - self.last_error)
+        self.last_error = error
+
+        output = P + I + D
+        return output
 
 
-waktu = time.asctime()
+def simulate_system(pid, setpoint, duration):
+    current_value = 0
+    time = []
+    values = []
 
-try: 
-    with open ('File.csv', mode='r') as file:
-        print("file di temukan")
-except:
-    with open ("File.csv", mode="w", encoding='utf-8', newline="") as file:
-        print("File tidak di temukan, membuat file baru")
-        messagebox.showinfo(title="pemberitahuan", message="Membeuta file baru")
-        isi = "WAKTU",'X1', 'Y1', 'X2', 'Y2'
-        w = csv.writer(file)
-        w.writerow(isi)
+    for t in range(duration):
+        control_signal = pid.calculate(setpoint, current_value)
+        current_value += control_signal
 
-lebarKanvas = 200
-lebarKotak = 50
+        time.append(t)
+        values.append(current_value)
 
-app = tk.Tk()
-# app.config(cursor= "")
-kanvas = tk.Canvas()
- 
-
-kanvas.place(width=1000, height=1000)
-
-alas = 100
-tinggi = 50
-
-xawal = 10
-yawal = 5
+    return time, values
 
 
+# Parameter PID
+Kp = 200.0
+Ki = 0
+Kd = 0
 
-# alas
-kanvas.create_line(xawal,tinggi,alas,tinggi, width=2)
-# tinggi
-kanvas.create_line(xawal,yawal,xawal,tinggi, width=2)
-# miring
-kanvas.create_line(xawal, yawal, alas, tinggi, width=2)
-with open ("File.csv", mode='a', encoding='utf-8', newline='') as file:
-    isi = waktu, xawal, yawal, alas, tinggi
-    a = csv.writer(file)
-    a.writerow(isi)
-app.mainloop()
+# Inisialisasi PID Controller
+pid = PIDController(Kp, Ki, Kd)
+
+# Simulasi sistem dengan kontrol PID
+setpoint = 5000
+duration = 1000
+time, values = simulate_system(pid, setpoint, duration)
+
+# Menampilkan diagram respons sistem
+plt.plot(time, values)
+plt.xlabel('Time')
+plt.ylabel('System Value')
+plt.title('PID Control System Response')
+plt.grid(True)
+plt.show()
