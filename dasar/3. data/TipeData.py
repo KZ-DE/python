@@ -8,6 +8,7 @@ data_float = 1.5
 print(type(data_float))
 print("data : ", data_float,",bertipe : ", type (data_float))
 
+
 # tipe data: kumpulan karakter (string)
 data_string = "ucup" #harus menggunakan tanda kutip
 print(type(data_string))

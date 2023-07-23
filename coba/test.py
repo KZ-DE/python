@@ -1,3 +1,5 @@
-data = [1,3,2]
-for a,b in enumerate(data):
-    print(a,b)
+def a(x):
+    b = x**2
+    print(b)
+    
+a(10)
