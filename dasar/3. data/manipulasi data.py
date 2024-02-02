@@ -7,7 +7,7 @@ c = "lutfi"
 nama_lengkap = a + b + c
 print(nama_lengkap)
 
-## format string
+# format string
 
 # nama
 nama = 'sudrun'
@@ -34,16 +34,16 @@ print(f'angka jutaan = {jutaan:,}')
 
 # bilangan desimal
 desimal = 2005.54321
-print(f'angka desimal = {desimal:.2f}' )
-print(f'angka desimal = {desimal:.3f}' )
+print(f'angka desimal = {desimal:.2f}')
+print(f'angka desimal = {desimal:.3f}')
 
 # menampilkan leding hero
 desimal = 2005.54321
-print(f'angka desimal = {desimal:10.3f}' )
-print(f'angka desimal = {desimal:11.3f}' )
-print(f'angka desimal = {desimal:15.3f}' )
-print(f'angka desimal = {desimal:010.3f}' )
-print(f'angka desimal = {desimal:015.3f}' )
+print(f'angka desimal = {desimal:10.3f}')
+print(f'angka desimal = {desimal:11.3f}')
+print(f'angka desimal = {desimal:15.3f}')
+print(f'angka desimal = {desimal:010.3f}')
+print(f'angka desimal = {desimal:015.3f}')
 # pengeseran angka yang ada di depan agar total baris berisi angka setelah titik dua (:)
 
 
@@ -68,3 +68,12 @@ angka = 255
 print(f'angka dalam binary = {bin(angka)}')
 print(f'angka dalam octal = {oct(angka)}')
 print(f'angka dalam hexadecimal = {hex(angka)}')
+
+# string ke ascii
+data = "hello"
+a = [ord(c) for c in data]
+print(a)
+
+# ascii ke string
+b = [chr(d) for d in a]
+print(b)

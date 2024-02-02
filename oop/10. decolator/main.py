@@ -1,41 +1,44 @@
 # getter dan setter
 
 class Hero():
-    def __init__(self, name:str, healt:int, armor:int) -> dict:
+    def __init__(self, name: str, healt: int, armor: int) -> dict:
         self.__name = name
         self.__health = healt
         self.__armor = armor
-        self.info = "Name {} :\n\tHealth {}".format(self.__name, self.__health) # tidak usah di tulis ketika memkasai method decolator
-        self.__info = "Name {} :\n\tHealth {}".format(self.__name, self.__health) # tidak usah di tulis ketika memkasai method 
+        # tidak usah di tulis ketika memkasai method decolator
+        self.info = "Name {} :\n\tHealth {}".format(self.__name, self.__health)
+        # tidak usah di tulis ketika memkasai method
+        self.__info = "Name {} :\n\tHealth {}".format(
+            self.__name, self.__health)
         pass
-    
+
     # getter method menggunakan cara yang biasa <tidak di sarankan>
     def getinfo(self):
         return self.__info
-    
+
     # menggunakan decolator properti <disarankan>
-    @property # mengubah method menjadi variable 
+    @property  # mengubah method menjadi variable
     def getinfo2(self):
         return "Name {} :\n\tHealth {}".format(self.__name, self.__health)
-    
+
     # deklarasi property untuk armor
     @property
-    def armor (self):
+    def armor(self):
         pass
-    
+
     # membuat method untuk getter
     @armor.getter
-    def getArmor (self):
+    def getArmor(self):
         return self.__armor
-    
+
     # membuat method untuk setter
     @armor.setter
     def setArmor(self, input):
         self.__armor = input
-        
+
     # membuat method untuk deletter
     @armor.deleter
-    def delArmor (self):
+    def delArmor(self):
         self.__armor = None
         print("armor di delete")
 
@@ -57,7 +60,7 @@ print(f"\nmenggunakan decolator :\n{sudrun.getinfo2}")
 print(sudrun.__dict__)
 
 
-### setter dan getter dengan property
+# setter dan getter dengan property
 print("\ngetter dan setter menggunakan method property\n")
 print(sudrun.getArmor)
 print(sudrun.__dict__)
