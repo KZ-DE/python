@@ -16,8 +16,8 @@ def kuadrat(x):
 # setelah itu tampilkan retrunnya / hasilnya
 
 a = kuadrat(3)
-print(a)
-kuadrat(3)
+print(f"contoh ke 2 : {a}\n")
+# kuadrat(10)
 print(kuadrat(5))
 
 # fungsi tambah
