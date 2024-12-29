@@ -1,0 +1,2 @@
+Seperti yang kita ketahui sebelumnya, Resistor merupakan suatu komponen pasif dalam elektronika, yang sering kita jumpai pada barang elektronik, seperti televisi, audio, dan juga dalam motherbord PC, yang mana mempunyai fungsi sebagai menghambat arus.
+namun, fungsi resistor bukan hanya untuk menghambat arus saja. Lalu apa saja fungsi  resistor dalam bidang elektronika?, mari kita bahas bersama sama.
